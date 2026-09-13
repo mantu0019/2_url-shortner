@@ -1,0 +1,11 @@
+import app from "./src/app.js";
+import connectToDb from "./src/config/db..js";
+import envConfig from "./src/config/env.js";
+import dns from "dns";
+dns.setServers(["1.1.1.1", "8.8.8.8"]);
+connectToDb();
+const port = envConfig.PORT || 5000;
+
+app.listen(port,() => {
+  console.log(`server is running on port http://localhost:${port}`);
+});
