@@ -10,7 +10,7 @@ export const createShort_url = async (req, res) => {
         message: "URL field Is Required",
       });
     }
-    const shortId = nanoid(8);
+    const shortId = nanoid(6);
 
     const shortUrl = await urlModel.create({
       shortId: shortId,
