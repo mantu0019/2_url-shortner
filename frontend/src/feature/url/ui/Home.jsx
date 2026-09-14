@@ -1,4 +1,4 @@
- 
+  
 
 import React, { useEffect, useState } from "react";
 import useUrl from "../hooks/useUrl";
@@ -70,7 +70,7 @@ const Home = () => {
 
     if (!shortId) return;
 
-    const shortUrl = `http://localhost:3000/api/url/${shortId}`;
+    const shortUrl =  `${import.meta.env.VITE_API_URL}/api/url/${shortId}`;
 
     try {
       await navigator.clipboard.writeText(shortUrl);
@@ -88,7 +88,7 @@ const Home = () => {
   const shortId = urlData?.shortUrl?.shortId;
 
   const shortUrl = shortId
-    ? `http://localhost:3000/api/url/${shortId}`
+    ? `${import.meta.env.VITE_API_URL}/api/url/${shortId}`
     : "";
 
   const clickCount = analyticsData?.totalClicks ?? 0;
